@@ -1,29 +1,18 @@
 
 export default class Food{
-
-    constructor(ctx){
+    constructor(ctx,image){
         this.x; 
         this.y;
-        this.ctx = ctx;
-        // this.rows = rows;
-        // this.colums = colums;
-        // this.square = square;      
-      
-     
+        this.ctx = ctx; 
+        this.image = image
     }
-
     location(rows,colums,square){
-        // console.log(rows,colums,square);      
-        
-        // Choose a random number in the jumps of 20
         this.x = (Math.floor(Math.random() *   rows - 1 ) + 1 ) *  square;
         this.y = (Math.floor(Math.random() *   colums - 1 ) + 1 ) *  square;
-        console.log(this.x,this.y);
-        
     }
     draw(square){
-        this.ctx.fillStyle = "black";
-        console.log(this.x ,this.y);  
-        this.ctx.fillRect(this.x , this.y ,square,square);   
+        this.ctx.fillStyle = "red";
+        this.ctx.drawImage(this.image, this.x , this.y,square,square);
+        // this.ctx.fillRect(this.x , this.y ,square,square);   
     }
 }
